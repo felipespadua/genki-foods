@@ -1,7 +1,8 @@
 const express = require('express');
 const router  = express.Router();
 const passport = require("passport");
-
+const User = require("../models/User")
+const Lead = require("../models/Lead")
 
 /* GET home page */
 router.get('/', (req, res, next) => {
@@ -9,7 +10,7 @@ router.get('/', (req, res, next) => {
 });
 
 
-router.get('/login', (req, res, next) => {
+router.get('/admin', (req, res, next) => {
   res.render('login');
 });
 
@@ -18,11 +19,113 @@ router.get("/logout", (req, res) => {
   res.redirect("/login");
 });
 
-router.post("/login", passport.authenticate("local", {
-  successRedirect: "/matches",
+
+router.get('/admin/dashboard', (req, res, next) => {
+  // const user = req.user;
+  // const username = req.user.username;
+  Lead.find()
+    .then( leads => { 
+      res.render('dashboard', { leads } )
+    })
+    .catch( err => {
+      console.log("Ocorreu um erro ao encontrar as partidas: ", err)
+    })
+
+});
+
+
+router.post("/admin", passport.authenticate("local", {
+  successRedirect: "/admin/dashboard",
   failureRedirect: "/login",
   failureFlash: true,
   passReqToCallback: true
 }));
+
+
+router.get('/api/getLeads', (req, res, next) => {
+ 
+  Lead.find()
+    .then( leads => { 
+      res.json(translateLeads(leads))
+    })
+    .catch( err => {
+      console.log("Ocorreu um erro ao encontrar as partidas: ", err)
+    })
+
+});
+
+
+const ensureAuthenticated = (req, res, next) => {
+  if (req.isAuthenticated()) {
+    return next();
+  } else {
+    res.redirect('/login')
+  }
+}
+
+
+// router.get('/admin/dashboard', ensureAuthenticated, (req, res, next) => {
+//   const user = req.user;
+//   const username = req.user.username;
+//   Lead.find()
+//     .then( leads => { 
+//       res.render('dashboard', { leads } )
+//     })
+//     .catch( err => {
+//       console.log("Ocorreu um erro ao encontrar as partidas: ", err)
+//     })
+
+// });
+
+
+// router.post('/send/form', ensureAuthenticated, (req, res, next) => {
+//   const user = req.user;
+//   const username = req.user.username;
+//   const { firstname, lastname, phone, message, email } = req.body;
+//   Lead.findOne({email})
+//     .then(lead => {
+//       if(lead == null){
+//         const newLead = new Lead({
+//           firstname,
+//           lastname,
+//           phone,
+//           message,
+//           email,
+//         }); 
+//         newLead.save()
+//           .then( lead => {
+//             console.log("Lead salva com sucesso")
+
+//           } )
+//           .catch( err => console.log(`Ocorreu um erro ao criar lead: ${err}`))
+
+//       }else{
+//         res.render("index", { message: "Email já cadastrado na nossa base."}) 
+//       }
+//     })
+ 
+
+
+
+// });
+
+const translateLeads = (leads) => {
+  let finalLeads = { 
+    total: leads.length,
+    totalNotFiltered: leads.length,
+    rows: []
+  }
+  leads.forEach(lead => {
+    let leadObj = {
+      name: lead.name,
+      email: lead.email
+    }
+    finalLeads.rows.push(leadObj)
+     
+  })
+  return finalLeads
+}
+
+
 
 module.exports = router;
