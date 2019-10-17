@@ -20,53 +20,9 @@ router.get("/logout", (req, res) => {
 });
 
 
-router.get('/admin/dashboard', (req, res, next) => {
-  // const user = req.user;
-  // const username = req.user.username;
-  Lead.find()
-    .then( leads => { 
-      res.render('dashboard', { leads } )
-    })
-    .catch( err => {
-      console.log("Ocorreu um erro ao encontrar as partidas: ", err)
-    })
-
-});
-
-
-router.post("/admin", passport.authenticate("local", {
-  successRedirect: "/admin/dashboard",
-  failureRedirect: "/login",
-  failureFlash: true,
-  passReqToCallback: true
-}));
-
-
-router.get('/api/getLeads', (req, res, next) => {
- 
-  Lead.find()
-    .then( leads => { 
-      res.json(translateLeads(leads))
-    })
-    .catch( err => {
-      console.log("Ocorreu um erro ao encontrar as partidas: ", err)
-    })
-
-});
-
-
-const ensureAuthenticated = (req, res, next) => {
-  if (req.isAuthenticated()) {
-    return next();
-  } else {
-    res.redirect('/login')
-  }
-}
-
-
-// router.get('/admin/dashboard', ensureAuthenticated, (req, res, next) => {
-//   const user = req.user;
-//   const username = req.user.username;
+// router.get('/admin/dashboard', (req, res, next) => {
+//   // const user = req.user;
+//   // const username = req.user.username;
 //   Lead.find()
 //     .then( leads => { 
 //       res.render('dashboard', { leads } )
@@ -78,36 +34,71 @@ const ensureAuthenticated = (req, res, next) => {
 // });
 
 
-// router.post('/send/form', ensureAuthenticated, (req, res, next) => {
-//   const user = req.user;
-//   const username = req.user.username;
-//   const { firstname, lastname, phone, message, email } = req.body;
-//   Lead.findOne({email})
-//     .then(lead => {
-//       if(lead == null){
-//         const newLead = new Lead({
-//           firstname,
-//           lastname,
-//           phone,
-//           message,
-//           email,
-//         }); 
-//         newLead.save()
-//           .then( lead => {
-//             console.log("Lead salva com sucesso")
+router.post("/admin", passport.authenticate("local", {
+  successRedirect: "/admin/dashboard",
+  failureRedirect: "/login",
+  failureFlash: true,
+  passReqToCallback: true
+}));
 
-//           } )
-//           .catch( err => console.log(`Ocorreu um erro ao criar lead: ${err}`))
+const ensureAuthenticated = (req, res, next) => {
+  if (req.isAuthenticated()) {
+    return next();
+  } else {
+    res.redirect('/login')
+  }
+}
 
-//       }else{
-//         res.render("index", { message: "Email já cadastrado na nossa base."}) 
-//       }
-//     })
+
+router.get('/api/getLeads',ensureAuthenticated, (req, res, next) => {
+  
+  Lead.find()
+  .then( leads => { 
+    res.json(translateLeads(leads))
+  })
+  .catch( err => {
+    console.log("Ocorreu um erro ao encontrar as partidas: ", err)
+  })
+  
+});
+
+router.get('/admin/dashboard', ensureAuthenticated, (req, res, next) => {
+  const user = req.user;
+  const username = req.user.username;
+  Lead.find()
+    .then( leads => { 
+      res.render('dashboard', { username } )
+    })
+    .catch( err => {
+      console.log("Ocorreu um erro ao encontrar as partidas: ", err)
+    })
+
+});
+
+
+router.post('/send/form', ensureAuthenticated, (req, res, next) => {
+  const user = req.user;
+  const username = req.user.username;
+  const { name,  email } = req.body;
+  Lead.findOne({email})
+    .then(lead => {
+      if(lead == null){
+        const newLead = new Lead({
+          name,
+          email,
+        }); 
+        newLead.save()
+          .then( lead => {
+            console.log("Lead salva com sucesso")
+          } )
+          .catch( err => console.log(`Ocorreu um erro ao criar lead: ${err}`))
+
+      }else{
+        res.render("index", { message: "Email já cadastrado na nossa base."}) 
+      }
+    })
  
-
-
-
-// });
+});
 
 const translateLeads = (leads) => {
   let finalLeads = { 
