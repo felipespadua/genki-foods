@@ -14,7 +14,7 @@ html {
   font-size: 62.5%
 }
 body {
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 14px 'Roboto', Helvetica, Arial, sans-serif;
 }
 
 a {
@@ -44,15 +44,6 @@ a {
   margin-top: -85px;
 }
 
-/* CAROUSEL */
-/* 
-.carousel-img {
-  width: 100%;
-  height: 30%;
-} */
-
-
-
 #carouselExampleIndicators {
   position: relative;
   width: 100vw;
@@ -62,6 +53,8 @@ a {
 .carousel-inner img {
   height: 400px;
 }
+
+
 /* FORM */
 
 
@@ -197,8 +190,9 @@ a {
 }
 
 #card-header {
-  font-size: 1.8em;
+  font-size: 2.8em;
   border: none;
+  color:#3b0e06;
 }
 
 .card img {
@@ -209,26 +203,34 @@ a {
 
 
 .call-to-action-discount {
-  background-color: #f2f2f2;
+  background-color: #fbfaf0;
 }
 
 .btn-primary {
-  background-color: #009688;
+  background-color: #486398;
 }
 
-/* MAP */
+/* CALL TO ACTION */
 
-#map img {
-  width: 40vw;
-  height: 40vh;
+.card-title.title-depoiment {
+  color:#e5c6d6;
+  font-weight: 700;
 }
 
+.card-img.img-depoiment {
+  width: 80%;
+}
+
+.card-text.text-farm {
+  text-align: left;
+  font-size: 2rem;
+}
 
 /* FOOTER */
 
 
 footer {
-  background-color: #f2f2f2;
+  background-color: #fbfaf0;
 }
 
 #footer-img-face {
