@@ -8,10 +8,11 @@
 * {
   margin: 0;
   padding: 0;
+  
 }
 
 html {
-  font-size: 62.5%
+  font-size: 16px;
 }
 body {
   font: 14px 'Roboto', Helvetica, Arial, sans-serif;
@@ -59,6 +60,7 @@ a {
 
 
 .form-discount {
+
   position: relative;
   margin-top: 10px;
   background-color: white;
@@ -116,7 +118,7 @@ a {
   position: absolute;
   width: 100%;
   /* min-width: 100%; */
-  top:120px;
+  top:130px;
   z-index: 200;
 
 }
@@ -270,4 +272,96 @@ footer figure {
   /* margin: 10% 20%; */
   /* font-size: 1rem; */
   text-align: left;
+}
+@media (max-width: 2000px){
+  .container-form h2{
+    font-size: 2.5rem;
+
+  }
+  .container-form{
+    font-size: 2rem;
+    position: absolute;
+    width: 100%;
+    /* min-width: 100%; */
+    top:60px;
+    z-index: 200;
+  
+  }
+  #carouselExampleIndicators {
+    width: 100vw;
+    height: 500px;
+    
+  }
+  .carousel-inner img {
+    height: 500px;
+  }
+  .carousel-inner h5 {
+    font-size: 5rem;
+  }
+  .carousel-inner p {
+
+    font-size: 2rem;
+
+  }
+}
+
+@media (max-width: 1500px){
+  .container-form h2{
+    font-size: 2.2rem;
+
+  }
+  .container-form{
+    font-size: 1.5rem;
+    position: absolute;
+    width: 100%;
+    /* min-width: 100%; */
+    top:70px;
+    z-index: 200;
+  
+  }
+  #carouselExampleIndicators {
+    width: 100vw;
+    height: 500px;
+    
+  }
+  .carousel-inner img {
+    height: 500px;
+  }
+  .carousel-inner h5 {
+    font-size: 5rem;
+  }
+  .carousel-inner p {
+
+    font-size: 2rem;
+
+  }
+  .input-control {
+    width: 10rem;
+    height: 2.5rem;
+  }
+  .form-discount button{
+    width: 15rem;
+    height: 4rem;
+    font-size: 1.5rem;
+  }
+}
+@media (max-width: 500px){
+  
+  .carousel-inner h5 {
+    font-size: 3rem;
+  }
+  .carousel-inner p {
+
+    font-size: 2rem;
+
+  }
+  .input-control {
+    width: 10rem;
+    height: 2.5rem;
+  }
+  .form-discount button{
+    width: 15rem;
+    height: 4rem;
+    font-size: 1.5rem;
+  }
 }
