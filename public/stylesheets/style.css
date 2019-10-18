@@ -1,3 +1,10 @@
+@font-face {
+  font-family: 'Roboto';
+  src: url('roboto.eot'); /* IE9 Compat Modes */
+  src: url('roboto.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('roboto.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
@@ -29,13 +36,7 @@ a {
   margin-top: -85px;
 }
 
-/* MAP */
 
-
-#map img {
-  width: 30vw;
-  height: 30vh;
-}
 
 
 /* CAROUSEL */
@@ -54,4 +55,105 @@ a {
 .form-discount {
   position: absolute;
 }
+
+/* DASHBOARD */
+
+
+#navbarNavAltMarkup {
+  display: flex;
+  justify-content: flex-end;
+}
+
+#dashboard-lead {
+  font-size: 2rem;
+}
+
+/* DASHBOARD */
+
+#table {
+  box-shadow: 20px 30px #888888;
+}
+
+/* PRODUCTS CARDS */
+
+
+.products-cards {
+  background-color: #f2f2f2;
+}
+
+.card-products {
+  background-color: #f2f2f2;
+}
+
+
+/* CARDS */
+
+/* .card-img-logo {
+  height: 70%;
+  width: 70%;
+  margin: 0 auto;
+} */
+
+.card-title {
+  font-size: 1.2em;
+  text-align: center;
+  font-weight: 600;
+}
+
+.card-text {
+  text-align: center;
+}
+
+#card-header {
+  font-size: 1.8em;
+  border: none;
+}
+
+.card img {
+  border-radius: 1;
+}
+
+/* CALL TO ACTION */
+
+
+.call-to-action-discount {
+  background-color: #f2f2f2;
+}
+
+.btn-primary {
+  background-color: #009688;
+}
+
+/* MAP */
+
+#map img {
+  width: 40vw;
+  height: 40vh;
+}
+
+
+/* FOOTER */
+
+
+footer {
+  background-color: #f2f2f2;
+}
+
+#footer-img-face {
+  width: 50%;
+}
+
+#footer-img-insta {
+  width: 50%;
+}
+
+#footer-img-twitter {
+  width: 50%;
+}
+
+footer figure {
+  width: 4vw;
+  height: 4vh;
+}
+
 

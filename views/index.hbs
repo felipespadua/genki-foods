@@ -1,154 +1,183 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-  <link rel="stylesheet" href="/style.css">
-  <title>Genki-Foods</title>
+  <title>{{title}}</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="/stylesheets/style.css" />
 </head>
+
 <body>
 
+  {{!-- PRODUCTS CARDS --}}
 
-{{!-- CAROUSEL --}}
+  <section class="products-cards">
+    <div class="container">
+      <div class="row d-flex justify-content-around pb-5 pt-5 pl-2 pr-2">
 
-<section>
-<div class="bd-example">
-  <div id="carouselExampleCaptions" class="carousel slide carousel-img" data-ride="carousel">
-    <ol class="carousel-indicators">
-      <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
-      <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
-      <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
-    </ol>
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="/images/images.jpg" class="d-block w-100" alt="...">
-        <div class="carousel-caption d-none d-md-block">
-          <h5>Receba kits de pratos saudáveis em casa</h5>
+      <div class="col-lg-8 h-100 text-left text-lg-left my-auto">
+
+      <div class="card-deck mb-4">
+        <div class="card card-products" style="border: none;">
+          <img src="https://www.psicologoeterapia.com.br/wp-content/uploads/pessoas-influenciaveis-1.jpg"
+            class="card-img-top card-logo" alt="Escolha o Seu Espaço">
+          <div class="card-body">
+            <h5 class="card-title">Alguém</h5>
+            <p class="card-text">O produto tem excelente qualidade!</p>
+          </div>
+        </div>
+        <div class="card card-products" style="border: none;">
+          <img src="https://www.psicologoeterapia.com.br/wp-content/uploads/pessoas-influenciaveis-1.jpg"
+            class="card-img-top card-logo" alt="Solicite um Orçamento para o Evento">
+          <div class="card-body">
+            <h5 class="card-title">Alguém</h5>
+            <p class="card-text">O produto tem excelente qualidade!</p>
+          </div>
+        </div>
+        <div class="card card-products" style="border: none;">
+          <img src="https://www.psicologoeterapia.com.br/wp-content/uploads/pessoas-influenciaveis-1.jpg"
+            class="card-img-top card-logo" alt="Reserve seu Espaço. Faça Seu Evento">
+          <div class="card-body">
+            <h5 class="card-title">Alguém</h5>
+            <p class="card-text">O produto tem excelente qualidade!</p>
+          </div>
         </div>
       </div>
-      <div class="carousel-item">
-        <img src="/images/images.jpg" class="d-block w-100" alt="...">
-        <div class="carousel-caption d-none d-md-block">
-          <h5>Receba kits de pratos saudáveis em casa</h5>
+    </div>
+
+        <div class="col-lg-4 h-100 text-center text-lg-left my-auto">
+            <h3>Kits saudáveis e saborosos</h3>
+          <p>Receba nossa seleção de pratos em casa...Nossos pratos tem sabor de verdade e utilizam ingredientes da nossa rica natureza brasileira. Passam pelo processo de ultracongelamento que oferece mantem o sabor e textura por mais tempo.</p>
+        </div>
+    </div>
+    </div>
+  </section>
+
+
+
+
+
+
+
+  {{!-- FARM CARDS --}}
+
+  <section>
+    <div class="container">
+      <div class="row d-flex justify-content-around mb-5 mt-5 ml-2 mr-2">
+        <div class="col-lg-4 h-100 text-left text-lg-left my-auto">
+          <h3>Produtos de agricultura orgânica e familiar</h3>
+          <p>Temos atenção ao processo e à nossa responsabilidade com o bem estar da sociedade.</p>
+        </div>
+        <div class="col-lg-8 h-100 my-auto d-flex justify-content-end">
+          <div id="map">
+            <img src="https://publicidademarketing.com/wp-content/uploads/2017/11/google-maps.jpg" alt="" srcset="">
+          </div>
         </div>
       </div>
-      <div class="carousel-item">
-        <img src="/images/images.jpg" class="d-block w-100" alt="...">
-        <div class="carousel-caption d-none d-md-block">
-          <h5>Receba kits de pratos saudáveis em casa</h5>
+  </section>
+
+  {{!-- FARM CARDS --}}
+
+
+  <section class="call-to-action-discount">
+    <div class="container">
+      <div class="row d-flex justify-content-between pt-3 pb-3">
+        <div class="col-lg-4 h-100 text-center text-lg-center my-auto">
+          <h5>Receba desconto e uma muda de tempero na primeira compra</h2>
+        </div>
+
+        <div class="col-lg-8 h-100 text-center text-lg-center my-auto">
+
+          <form class="form-inline" action="/admin" method="post">
+
+            <label class="sr-only" for="inlineFormInputName2">Nome</label>
+            <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" placeholder="Seu nome">
+
+            <label class="sr-only" for="inlineFormInputGroupUsername2">E-mail</label>
+            <div class="input-group mb-2 mr-sm-2">
+              <div class="input-group-prepend">
+                <div class="input-group-text">@</div>
+              </div>
+              <input type="text" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Seu e-mail">
+            </div>
+            <div class="col-auto mb-2 my-auto">
+              <button type="submit" class="btn btn-primary">Quero um desconto</button>
+            </div>
+          </form>
         </div>
       </div>
     </div>
-    <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
-    </a>
-  </div>
-</div>
-</section>
+  </section>
 
 
-{{!-- FORM --}}
+  {{!-- DEPOIMENTS --}}
 
-<form class="form-discount">
-  <h2>Receba o seu desconto e uma muda de tempero na primeira compra</h2>
-  <div class="form-group">
-    <label for="exampleInputEmail1">Nome</label>
-    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Digite seu nome">
-  </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">E-mail</label>
-    <input type="e-mail" class="form-control" id="exampleInputPassword1" placeholder="Digite seu e-mail">
-  </div>
-  <button type="submit" class="btn btn-primary">Quero um cupom de desconto</button>
-</form>
-
-{{!-- PRODUCT CARDS --}}
-
-<section>
-
-<div class="container">
-  <h3 class='second-title-index' id='card-header'>Encontrar o local perfeito é fácil!</h3>
-  <div class="card-deck">
-    <div class="card" id='comofunciona' style="border: none;">
-      <img src="https://www.saboravida.com.br/wp-content/uploads/2017/09/comida-congelada-e-opcao-para-manter-uma-alimentacao-saudavel.jpg" class="card-img-top card-logo" alt="Escolha o Seu Espaço">
-      <div class="card-body">
-        <h5 class="card-title">Escolha</h5>
-        <p class="card-text">Analise todas as informações e escolha seu espaço preferido.</p>
+  <section>
+    <div class="container">
+      <h3 class='second-title-index mt-3 mb-3' id='card-header'>Depoimentos</h3>
+      <div class="card-deck mb-4">
+        <div class="card" style="border: none;">
+          <img src="https://www.psicologoeterapia.com.br/wp-content/uploads/pessoas-influenciaveis-1.jpg"
+            class="card-img-top card-logo" alt="Escolha o Seu Espaço">
+          <div class="card-body">
+            <h5 class="card-title">Alguém</h5>
+            <p class="card-text">O produto tem excelente qualidade!</p>
+          </div>
+        </div>
+        <div class="card" style="border: none;">
+          <img src="https://www.psicologoeterapia.com.br/wp-content/uploads/pessoas-influenciaveis-1.jpg"
+            class="card-img-top card-logo" alt="Solicite um Orçamento para o Evento">
+          <div class="card-body">
+            <h5 class="card-title">Alguém</h5>
+            <p class="card-text">O produto tem excelente qualidade!</p>
+          </div>
+        </div>
+        <div class="card" style="border: none;">
+          <img src="https://www.psicologoeterapia.com.br/wp-content/uploads/pessoas-influenciaveis-1.jpg"
+            class="card-img-top card-logo" alt="Reserve seu Espaço. Faça Seu Evento">
+          <div class="card-body">
+            <h5 class="card-title">Alguém</h5>
+            <p class="card-text">O produto tem excelente qualidade!</p>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="card" style="border: none;">
-      <img src="https://www.saboravida.com.br/wp-content/uploads/2017/09/comida-congelada-e-opcao-para-manter-uma-alimentacao-saudavel.jpg" class="card-img-top card-logo" alt="Solicite um Orçamento para o Evento">
-      <div class="card-body">
-        <h5 class="card-title">Solicite um Orçamento</h5>
-        <p class="card-text">Customize o evento às suas necessidades e avalie o investimento necessário.</p>
-      </div>
+  </section>
+
+  {{!-- FOOTER --}}
+
+  <footer>
+    <div class="d-flex justify-content-end pb-3 pt-3">
+      <figure>
+        <a href="http://www.facebook.com" target="_blank"><img id="footer-img-face"
+            src="https://pngimage.net/wp-content/uploads/2018/05/facebook-png-cinza-2.png" alt="Facebook img"></a>
+      </figure>
+      <figure>
+        <a href="http://www.instagram.com" target="_blank"><img id="footer-img-insta"
+            src="https://cdn.icon-icons.com/icons2/792/PNG/512/INSTAGRAM_icon-icons.com_65535.png"
+            alt="Instagram img"></a>
+      </figure>
+      <figure>
+        <a href="http://www.twitter.com" target="_blank"><img id="footer-img-twitter"
+            src="https://www.porchlightatl.com/wp-content/uploads/2017/08/Twitter.png" alt="Twitter img"></a>
+      </figure>
     </div>
-    <div class="card" style="border: none;">
-      <img src="https://www.saboravida.com.br/wp-content/uploads/2017/09/comida-congelada-e-opcao-para-manter-uma-alimentacao-saudavel.jpg" class="card-img-top card-logo" alt="Reserve seu Espaço. Faça Seu Evento">
-      <div class="card-body">
-        <h5 class="card-title">Reserve Seu Espaço</h5>
-        <p class="card-text">Efetue o pagamento ao locador e faça a sua reserva. Realize o seu evento!</p>
-      </div>
-    </div>
-  </div>
+  </footer>
 
-</section>
-
-{{!-- FARM CARDS --}}
-
-<section>
-
-  <div class="container">
-    <div class="row d-flex justify-content-between">
-    <div>
-    <h2>Nossos agricultores parceiros</h2>
-    <h4>Nossas plantações.....</h4>
-    </div>
-    <div id="map">
-      <img src="https://publicidademarketing.com/wp-content/uploads/2017/11/google-maps.jpg" alt="" srcset="">
-    </div>
-  </div>
-</section>
-
-{{!-- FOOTER --}}
-
-
-<footer>
-
-
-
-</footer>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <script src="/javascripts/script.js"></script>
 </body>
+
 </html>
-
-
-
-
-
-
-
