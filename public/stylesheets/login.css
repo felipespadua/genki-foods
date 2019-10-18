@@ -21,7 +21,7 @@ a {
 .back-login {
   margin: 0;
   padding: 0;
-  background-color: #17a2b8;
+  background-color: #BDC391;
   height: 100vh;
 }
 
@@ -39,4 +39,14 @@ a {
 
 #login .container #login-row #login-column #login-box #login-form #register-link {
   margin-top: -85px;
+}
+
+.text-login {
+    color: #486398!important;
+}
+
+.btn-login {
+  color: #fff;
+  background-color: #486398!important;
+  border-color: #486398!important;
 }

@@ -25,7 +25,7 @@ a {
 .back-login {
   margin: 0;
   padding: 0;
-  background-color: #17a2b8;
+  background-color: #BDC391;
   height: 100vh;
 }
 
@@ -153,6 +153,7 @@ a {
 
 #dashboard-lead {
   font-size: 2rem;
+  color: #486398!important;
 }
 
 /* DASHBOARD */
@@ -365,3 +366,17 @@ footer figure {
     font-size: 1.5rem;
   }
 }
+
+/* LAST CHANGES */
+
+#text-dashboard {
+  color: #486398!important;
+}
+
+
+/* MAP */
+
+#map {
+  height: 500px;
+}
+

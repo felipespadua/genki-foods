@@ -1,39 +1,50 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" href="/stylesheets/style.css">
+
 <div class="container mb-4">
-<div id="toolbar" class="select">
-  <select class="form-control">
-    <option value="">Exportar Basico</option>
-    <option value="all">Exportar Todos</option>
-    <option value="selected">Exportar Selecionados</option>
-  </select>
+  <div id="toolbar" class="select">
+    <select class="form-control">
+      <option value="">Exportar Basico</option>
+      <option value="all">Exportar Todos</option>
+      <option value="selected">Exportar Selecionados</option>
+    </select>
+  </div>
+
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" id="dashboard-lead text-dashboard">Dashboard - Leads</a>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-item nav-link" href="#map">Fornecedores</a>
+        <a class="nav-item nav-link" href="/logout">Logout</a>
+      </div>
+    </div>
+  </nav>
+
+
+  <table id="table"
+    data-show-export="true"
+    data-pagination="true"
+    data-side-pagination="server"
+    data-click-to-select="true"
+    data-toolbar="#toolbar"
+    data-show-toggle="true"
+    data-show-columns="true"
+    data-locale="pt-BR"
+    >
+  </table>
+
+  <div class="container">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light mt-3">
+    <a class="navbar-brand text-align-center">Fornecedores</a>
+    </nav>
+    <div class="mt-2" id="map"></div>
+  </div>
+
 </div>
 
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" id="dashboard-lead">Dashboard - Leads</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Alterna navegação">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-    <div class="navbar-nav">
-      <a class="nav-item nav-link" href="/logout">Logout</a>
-    </div>
-  </div>
-</nav>
-
-
-<table id="table"
-  data-show-export="true"
-  data-pagination="true"
-  data-side-pagination="server"
-  data-click-to-select="true"
-  data-toolbar="#toolbar"
-  data-show-toggle="true"
-  data-show-columns="true"
-  data-locale="pt-BR"
-  >
-</table>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <script
   src="https://code.jquery.com/jquery-2.2.4.min.js"
   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
@@ -50,4 +61,53 @@
 <script src="https://unpkg.com/bootstrap-table@1.15.5/dist/extensions/export/bootstrap-table-export.min.js"></script>
 <script src="https://unpkg.com/bootstrap-table@1.15.5/dist/bootstrap-table-locale-all.min.js"></script>
 <script src="/javascripts/script.js"></script>
-</div>
+<script src="https://maps.googleapis.com/maps/api/js?key={{googlekey}}"></script>
+<script>
+  
+ const startMap = () => {
+    const farm = {
+      lat: -22.740654,
+      lng: -45.229133
+    };
+
+    const map = new google.maps.Map(
+      document.getElementById('map'),
+      {
+        zoom: 8,
+        center: farm
+      }
+    );
+
+    const myMarker = new google.maps.Marker({
+      position: {
+        lat: -22.740654,
+        lng: -45.229133
+      },
+      map: map,
+      title: "Farm"
+    });
+
+    const myMarker1 = new google.maps.Marker({
+        position: {
+        lat: -22.7347564,
+        lng: -45.3462196
+      },
+      map: map,
+      title: "Farm2"
+    });
+
+    const myMarker2 = new google.maps.Marker({
+        position: {
+        lat: -23.2878667,
+        lng: -46.6742787
+      },
+      map: map,
+      title: "Farm3"
+    });
+
+  }
+  
+  startMap();
+
+
+</script>
