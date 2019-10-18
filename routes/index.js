@@ -74,7 +74,12 @@ router.get('/admin/dashboard', ensureAuthenticated, (req, res, next) => {
     })
 
 });
+router.get('/test', (req, res, next) => {
 
+      res.render('test')
+
+
+});
 
 router.post('/send/form', ensureAuthenticated, (req, res, next) => {
   const user = req.user;
