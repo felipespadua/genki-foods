@@ -3,6 +3,7 @@ const router  = express.Router();
 const passport = require("passport");
 const User = require("../models/User")
 const Lead = require("../models/Lead")
+const googlekey = process.env.APIKEY;
 
 /* GET home page */
 router.get('/', (req, res, next) => {
@@ -79,12 +80,12 @@ router.get('/admin/dashboard', ensureAuthenticated, (req, res, next) => {
   const username = req.user.username;
   Lead.find()
     .then( leads => { 
-      res.render('dashboard', { username } )
+      res.render('dashboard', { username, googlekey } )
     })
     .catch( err => {
       console.log("Ocorreu um erro ao encontrar as partidas: ", err)
     })
-
+    res.render('dashboard', { username, googlekey } )
 });
 router.get('/test', (req, res, next) => {
 
