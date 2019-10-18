@@ -1,84 +1,164 @@
 
 {{!-- CAROUSEL --}}
 
-<section>
-  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img class="d-block w-100" src="/images/images.jpg" alt="First slide">
-        <div class="carousel-caption d-flex justify-content-start flex-column fixed-top">
-          <div class="d-flex justify-content-start flex-column w-25">
-            <h5>Saboroso Prático Saudável</h5>
-          </div>
-          <div class="d-flex justify-content-start">
-            <p>Receba pratos em casa toda semana</p>
+<div class="container-fluid">
+  <div id-"" class="row">
+    {{!-- <div class="col-12"> --}}
+      <section>
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img class="d-block w-100" src="/images/images.jpg" alt="First slide">
+              <div class="carousel-caption d-flex justify-content-start flex-column fixed-top">
+                <div class="d-flex justify-content-start flex-column w-25">
+                  <h5>Saboroso Prático Saudável</h5>
+                </div>
+                <div class="d-flex justify-content-start">
+                  <p>Receba pratos em casa toda semana</p>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img class="d-block w-100" src="/images/images.jpg" alt="Second slide">
+              <div class="carousel-caption d-flex justify-content-start flex-column fixed-top">
+                <div class="d-flex justify-content-start flex-column w-25">
+                  <h5>Saboroso Prático Saudável</h5>
+                </div>
+                <div class="d-flex justify-content-start">
+                  <p>Receba pratos em casa toda semana</p>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img class="d-block w-100" src="/images/images.jpg" alt="Third slide">
+              <div class="carousel-caption d-flex justify-content-start flex-column fixed-top">
+                <div class="d-flex justify-content-start flex-column w-25">
+                  <h5>Saboroso Prático Saudável</h5>
+                </div>
+                <div class="d-flex justify-content-start">
+                  <p>Receba pratos em casa toda semana</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="carousel-item">
-        <img class="d-block w-100" src="/images/images.jpg" alt="Second slide">
-        <div class="carousel-caption d-flex justify-content-start flex-column fixed-top">
-          <div class="d-flex justify-content-start flex-column w-25">
-            <h5>Saboroso Prático Saudável</h5>
-          </div>
-          <div class="d-flex justify-content-start">
-            <p>Receba pratos em casa toda semana</p>
-          </div>
-        </div>
-      </div>
-      <div class="carousel-item">
-        <img class="d-block w-100" src="/images/images.jpg" alt="Third slide">
-        <div class="carousel-caption d-flex justify-content-start flex-column fixed-top">
-          <div class="d-flex justify-content-start flex-column w-25">
-            <h5>Saboroso Prático Saudável</h5>
-          </div>
-          <div class="d-flex justify-content-start">
-            <p>Receba pratos em casa toda semana</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
 
-</section>
-
-
-{{!-- FORM --}}
-<div class="container-form d-flex align-items-end ">
-  <div class="container">
-    <div class="row">
-      <div class="col-3">
-
-      </div>
-      <div class="col-3">
-        
-      </div>
-      <div class="col-3">
+      </section>
+      {{!-- FORM --}}
+      <div class="container-form d-none d-md-flex  d-lg-flex align-items-end  ">
+      
         <div class="form-discount">
           <form>
-            <h2>50% de desconto</h2>
+            <div class="d-flex justify-content-start center-block  w-25 ">
+              <h2>50% de desconto</h2>
+            </div>
             <h3>e uma muda de tempero na primeira compra</h3>
-            <div class="form-group">
-              <label for="exampleInputEmail1">Nome</label>
-              <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Digite seu nome">
+            <div class="d-flex flex-column align-items-midle justify-content-center text-center">
+              <div class="form-group">
+                <label for="exampleInputEmail1">Nome</label>
+                <input type="text" class="form-control input-control d-inline" id="exampleInputEmail1" aria-describedby="emailHelp">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">E-mail</label>
+                <input type="e-mail" class="form-control input-control d-inline" id="exampleInputPassword1">
+              </div>
+              <div>
+                <button type="submit" class="btn btn-primary btn-md text-center">Quero desconto</button>
+
+              </div>
+
             </div>
-            <div class="form-group">
-              <label for="exampleInputPassword1">E-mail</label>
-              <input type="e-mail" class="form-control" id="exampleInputPassword1" placeholder="Digite seu e-mail">
-            </div>
-            <button type="submit" class="btn btn-primary">Quero um cupom de desconto</button>
           </form>
         </div>
       </div>
-      <div class="col-3">
-        
-      </div>
-  </div>
+
+      {{!-- </div> --}}
+    </div>
 
   </div>
 
+
+
+  {{!-- <div class="container-form d-none d-md-flex  d-lg-flex align-items-end  ">
+    <div class="container">
+      <div class="row">
+        <div class="col-3">
+
+        </div>
+        <div class="col-3">
+          
+        </div>
+        <div class="col-3">
+          <div class="form-discount">
+            <form>
+              <div class="d-flex justify-content-start center-block  w-25 ">
+                <h2>50% de desconto</h2>
+              </div>
+              <h3>e uma muda de tempero na primeira compra</h3>
+              <div class="d-flex flex-column align-items-midle justify-content-center text-center">
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Nome</label>
+                  <input type="text" class="form-control input-control d-inline" id="exampleInputEmail1" aria-describedby="emailHelp">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">E-mail</label>
+                  <input type="e-mail" class="form-control input-control d-inline" id="exampleInputPassword1">
+                </div>
+                <div>
+                  <button type="submit" class="btn btn-primary btn-md text-center">Quero desconto</button>
+
+                </div>
+
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="col-3">
+          
+        </div>
+    </div>
+
+    </div>
+
+  </div> --}}
 </div>
  
+<section id="section-form">
+ <div class="container-form-sm d-flex d-md-none d-lg-none justify-content-center align-content-midle ">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="form-discount-sm">
+            <form>
+              <div class="d-flex d-column flex-wrap justify-content-center center-block ">
+                <div>
+                  <h2>50% de desconto</h2>
+                </div>
+                <div>
+                  <h3>e uma muda de tempero na primeira compra</h3>
+                </div>
+              </div>
+              <div class="d-flex flex-column align-items-midle justify-content-center text-center">
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Nome</label>
+                  <input type="text" class="form-control input-control d-inline" id="exampleInputEmail1" aria-describedby="emailHelp">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">E-mail</label>
+                  <input type="e-mail" class="form-control input-control d-inline" id="exampleInputPassword1">
+                </div>
+                <div>
+                  <button type="submit" class="btn btn-primary btn-md text-center">Quero desconto</button>
+                </div>
+
+              </div>
+            </form>
+          </div>
+        </div>
+    </div>
+    </div>
+  </div>
+ </section>
 {{!-- PRODUCTS CARDS --}}
  <section class="products-cards">
    <div class="container">

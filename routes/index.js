@@ -16,7 +16,7 @@ router.get('/admin', (req, res, next) => {
 
 router.get("/logout", (req, res) => {
   req.logout();
-  res.redirect("/login");
+  res.redirect("/admin");
 });
 
 
@@ -36,7 +36,7 @@ router.get("/logout", (req, res) => {
 
 router.post("/admin", passport.authenticate("local", {
   successRedirect: "/admin/dashboard",
-  failureRedirect: "/login",
+  failureRedirect: "/admin",
   failureFlash: true,
   passReqToCallback: true
 }));
@@ -45,7 +45,7 @@ const ensureAuthenticated = (req, res, next) => {
   if (req.isAuthenticated()) {
     return next();
   } else {
-    res.redirect('/login')
+    res.redirect('/admin')
   }
 }
 
