@@ -215,6 +215,11 @@ a {
 .card-title.title-depoiment {
   color:#e5c6d6;
   font-weight: 700;
+  font-size: 2.5rem;
+}
+
+.text-depoiment {
+  font-size: 2rem;
 }
 
 .card-img.img-depoiment {
@@ -234,20 +239,20 @@ footer {
 }
 
 #footer-img-face {
-  width: 50%;
+  width: 100%;
 }
 
 #footer-img-insta {
-  width: 50%;
+  width: 100%;
 }
 
 #footer-img-twitter {
-  width: 50%;
+  width: 100%;
 }
 
+footer h2,
 footer figure {
-  width: 4vw;
-  height: 4vh;
+  margin: 0;
 }
 
 

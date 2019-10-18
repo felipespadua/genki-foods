@@ -75,51 +75,6 @@
     </div>
 
   </div>
-
-
-
-  {{!-- <div class="container-form d-none d-md-flex  d-lg-flex align-items-end  ">
-    <div class="container">
-      <div class="row">
-        <div class="col-3">
-
-        </div>
-        <div class="col-3">
-          
-        </div>
-        <div class="col-3">
-          <div class="form-discount">
-            <form>
-              <div class="d-flex justify-content-start center-block  w-25 ">
-                <h2>50% de desconto</h2>
-              </div>
-              <h3>e uma muda de tempero na primeira compra</h3>
-              <div class="d-flex flex-column align-items-midle justify-content-center text-center">
-                <div class="form-group">
-                  <label for="exampleInputEmail1">Nome</label>
-                  <input type="text" class="form-control input-control d-inline" id="exampleInputEmail1" aria-describedby="emailHelp">
-                </div>
-                <div class="form-group">
-                  <label for="exampleInputPassword1">E-mail</label>
-                  <input type="e-mail" class="form-control input-control d-inline" id="exampleInputPassword1">
-                </div>
-                <div>
-                  <button type="submit" class="btn btn-primary btn-md text-center">Quero desconto</button>
-
-                </div>
-
-              </div>
-            </form>
-          </div>
-        </div>
-        <div class="col-3">
-          
-        </div>
-    </div>
-
-    </div>
-
-  </div> --}}
 </div>
  
 <section id="section-form">
@@ -158,14 +113,16 @@
     </div>
   </div>
  </section>
+
 {{!-- PRODUCTS CARDS --}}
+
 <section class="products-cards">
-  <div class="container">
-    <div class="row d-flex justify-content-around pb-5 pt-5 pl-2 pr-2">
+  <div class="container pt-5">
+    <div class="row d-flex justify-content-around pt-5 pl-2 pr-2">
       <div class="col-lg-12 h-100 text-left text-lg-left my-auto">
         <div class="card-deck mb-4">
           <div class="card card-products" style="border: none;">
-            <img src="/images/section-4.png"
+            <img src="/images/section1.png"
               class="card-img-top card-logo" alt="Escolha o Seu Espaço">
             <div class="card-body">
               <h5 class="card-title">Agende kits personalizados por nós</h5>
@@ -173,7 +130,7 @@
             </div>
           </div>
           <div class="card card-products" style="border: none;">
-            <img src="https://www.psicologoeterapia.com.br/wp-content/uploads/pessoas-influenciaveis-1.jpg"
+            <img src="/images/section2.png"
               class="card-img-top card-logo" alt="Solicite um Orçamento para o Evento">
             <div class="card-body">
               <h5 class="card-title">Acrescente saladas orgânicas frescas</h5>
@@ -181,7 +138,7 @@
             </div>
           </div>
           <div class="card card-products" style="border: none;">
-            <img src="https://www.psicologoeterapia.com.br/wp-content/uploads/pessoas-influenciaveis-1.jpg"
+            <img src="/images/section3.png"
               class="card-img-top card-logo" alt="Reserve seu Espaço. Faça Seu Evento">
             <div class="card-body">
               <h5 class="card-title">Saboreie receitas feitas com ingredientes naturais</h5>
@@ -225,8 +182,8 @@
             <p class="card-text text-farm">Preparamos os nossos pratos com alimentos de agricultura familiar orgânica.</p>
           </div>
         </div>
-        <div class="col-md-8 d-flex justify-content-end">
-          <img src="https://ogimg.infoglobo.com.br/in/16886367-9b3-1db/FT1086A/652/20130820992891.jpg" class="card-img img-depoiment" alt="Depoimento">
+        <div class="col-md-8 d-flex justify-content-center">
+          <img src="/images/mosaic.png" class="card-img img-depoiment" alt="Depoimento">
         </div>
       </div>
     </div>
@@ -246,13 +203,13 @@
 
       <div class="col-lg-8 h-100 d-flex justify-content-center my-auto">
 
-        <form class="form-inline" action="/admin" method="post">
+        <form class="form-inline w-100" action="/admin" method="post">
 
           <label class="sr-only" for="inlineFormInputName2">Nome</label>
-          <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" placeholder="Seu nome">
+          <input type="text" class="form-control mb-2 mr-sm-2 w-25" id="inlineFormInputName2" placeholder="Seu nome">
 
           <label class="sr-only" for="inlineFormInputGroupUsername2">E-mail</label>
-          <div class="input-group mb-2 mr-sm-2">
+          <div class="input-group mb-2 mr-sm-2 w-50">
             <div class="input-group-prepend">
               <div class="input-group-text">@</div>
             </div>
@@ -271,7 +228,7 @@
 {{!-- DEPOIMENTS --}}
 
 <section>
-  <div class="container">
+  <div class="container py-2">
     <h3 class='second-title-index mt-3 mb-3 pt-3' id='card-header'>Depoimentos</h3>
     <div class="card mb-5 mt-5" style="border: none;">
       <div class="row no-gutters">
@@ -281,7 +238,7 @@
         <div class="col-md-6 d-flex align-items-center">
           <div class="card-body text-align-center">
             <h5 class="card-title text-align-left title-depoiment">Bela Gil</h5>
-            <p class="card-text">"A comida da Genki é maravilhosa! Eles usam ingredientes de qualidade e tem atenção a todo processo de fornecimento."</p>
+            <p class="card-text text-depoiment">"A comida da Genki é maravilhosa! Eles usam ingredientes de qualidade e tem atenção a todo processo de fornecimento."</p>
           </div>
         </div>
       </div>
@@ -293,33 +250,30 @@
 
 <footer>
   <div class="container">
-    <div class="row d-flex justify-content-between">
-      <div class="d-flex pb-3 pt-3">
-        <div class="col-lg-4">
+    <div class="row d-flex">
+      <div class="d-flex py-3 w-100 justify-content-between align-items-center">
+        <div class="col-lg-6">
           <h2>Genki Foods</h2>
         </div>
-        <div class="col-lg-8 d-flex">
-          <div class="d-flex">
+        <div class="col-lg-6 d-flex justify-content-end align-items-center">
+          <div class="d-flex mr-3">
           <figure>
-            <img id="footer-img-face" src="https://pngimage.net/wp-content/uploads/2018/05/facebook-png-cinza-2.png"
-              alt="Facebook img">
+             <a href="http://www.facebook.com" target="_blank"><img id="footer-img-face" src="/images/footer2.png"
+              alt="Facebook img"></a>
           </figure>
-          <h4 class="text-align-center mr-3">/genkifoods</h4>
           </div>
-          <div class="d-flex">
+          <div class="d-flex mr-3">
           <figure>
             <a href="http://www.instagram.com" target="_blank"><img id="footer-img-insta"
-                src="https://cdn.icon-icons.com/icons2/792/PNG/512/INSTAGRAM_icon-icons.com_65535.png"
+                src="/images/footer1.png"
                 alt="Instagram img"></a>
           </figure>
-          <h4 class="text-align-right text-center">@genkifoods</h4>
           </div>
-          <div class="d-flex">
+          <div class="d-flex mr-3">
           <figure>
             <a href="http://www.twitter.com" target="_blank"><img id="footer-img-twitter"
-                src="https://www.porchlightatl.com/wp-content/uploads/2017/08/Twitter.png" alt="Twitter img"></a>
+                src="/images/footer3.png" alt="Twitter img"></a>
           </figure>
-          <h4 class="text-align-right text-center">@genkifoods</h4>
           </div>
         </div>
       </div>
