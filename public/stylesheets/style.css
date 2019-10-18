@@ -47,7 +47,7 @@ a {
 
 #carouselExampleIndicators {
   position: relative;
-  width: 100vw;
+  /* width: 100vw; */
   height: 400px;
   
 }
@@ -60,17 +60,15 @@ a {
 
 
 .form-discount {
-
   position: relative;
   margin-top: 10px;
   background-color: white;
   padding: 2rem 5rem;
   width: 30%;
-  /* height: 40vh; */
   border-radius: 1%;
   top: 50%;
   left: 50%;
-  /* transform: translate(-50%, -50%); */
+
 }
 
 .form-discount button{
@@ -89,7 +87,7 @@ a {
 .form-discount-sm {
   background-color: white;
   width: 100vw;
-  height: 40vh;
+  padding: 20px;
   border-radius: 1%;
 
 }
@@ -133,11 +131,13 @@ a {
   font-size: 2rem;
 }
 .container-form-sm h2{
+  margin-top: 30px;
   color: rgb(229,46,74);
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-style: normal;
   font-weight: bold;
   line-height: 107.1%;
+  height: 80px;
 }
 
 .container-form-sm h3{
@@ -200,6 +200,7 @@ a {
 
 .card img {
   border-radius: 1;
+  z-index: 1000;
 }
 
 /* CALL TO ACTION */
@@ -274,7 +275,43 @@ footer figure {
   /* font-size: 1rem; */
   text-align: left;
 }
-@media (max-width: 2000px){
+
+.arrow-h {
+  width: 100px;
+  margin-top: 60px;
+  animation: setah 1s;
+  display: none;
+}
+
+.arrow-h2 {
+  width: 100px;
+  margin-top: 60px;
+  display: none;
+  animation: setah 1s ease-in;
+}
+
+
+.arrow-v {
+  position: absolute;
+  height: 100px;
+  width: 100px;
+  top: 85%;
+  left: 85%;
+  animation: setav 1s ease-in;
+}
+
+@keyframes setah {
+  0%   {transform: translateX(-150px)}
+  100% {transform: translateX(0); display: block;}
+}
+
+@keyframes setav {
+  0%   {transform: translateY(150px);}
+  100% {transform: translateX(0); }
+}
+
+
+@media (max-width: 2200px){
   .container-form h2{
     font-size: 2.5rem;
 
@@ -304,21 +341,30 @@ footer figure {
     font-size: 2rem;
 
   }
+  .h2, h2 {
+    font-size: 1.5rem;
+  }
+  .arrow-v {
+    left: 75%;
+
+  }
 }
 
 @media (max-width: 1500px){
   .container-form h2{
-    font-size: 2.2rem;
-
+    font-size: 2rem;
   }
   .container-form{
     font-size: 1.5rem;
     position: absolute;
     width: 100%;
     /* min-width: 100%; */
-    top:70px;
+    top:135px;
     z-index: 200;
   
+  }
+  .container-form h3{
+    font-size: 1.5rem;
   }
   #carouselExampleIndicators {
     width: 100vw;
@@ -332,9 +378,7 @@ footer figure {
     font-size: 5rem;
   }
   .carousel-inner p {
-
-    font-size: 2rem;
-
+    font-size: 1.7rem;
   }
   .input-control {
     width: 10rem;
@@ -345,15 +389,43 @@ footer figure {
     height: 4rem;
     font-size: 1.5rem;
   }
+  .form-discount {
+    height: 20%;
+    width: 30%;
+    /* height: 40vh; */
+    border-radius: 1%;
+    top: 60%;
+    left: 53%;
+    /* transform: translate(-50%, -50%); */
+  }
+  #card-header{
+    font-size: 2rem;
+  }
+  .card-text.text-farm {
+    text-align: left;
+    font-size: 1.5rem;
+  }
+  .h2, h2 {
+    font-size: 1.5rem;
+  }
+  .text-depoiment {
+    font-size: 1.5rem;
+  }
+  .products-cards img {
+    size: 10px;
+  }
 }
+  
+
 @media (max-width: 500px){
   
   .carousel-inner h5 {
     font-size: 3rem;
   }
   .carousel-inner p {
-
-    font-size: 2rem;
+    margin-top: 30px;
+    width: 60%;
+    font-size: 1.5rem;
 
   }
   .input-control {
@@ -380,3 +452,15 @@ footer figure {
   height: 500px;
 }
 
+  #carouselExampleIndicators {
+    position: relative;
+    height: 400px;
+    width: 150vw;
+
+    
+  }
+  .carousel-inner img {
+    height: 400px;
+  }
+
+}

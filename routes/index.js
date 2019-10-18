@@ -23,18 +23,30 @@ router.get("/logout", (req, res) => {
 });
 
 
-// router.get('/admin/dashboard', (req, res, next) => {
-//   // const user = req.user;
-//   // const username = req.user.username;
-//   Lead.find()
-//     .then( leads => { 
-//       res.render('dashboard', { leads } )
-//     })
-//     .catch( err => {
-//       console.log("Ocorreu um erro ao encontrar as partidas: ", err)
-//     })
+router.post('/send/form', (req, res, next) => {
+  const { name,  email } = req.body;
+  console.log("bateu")
+  Lead.findOne({email})
+    .then(lead => {
+      if(lead == null){
+        const newLead = new Lead({
+          name,
+          email,
+        }); 
+        newLead.save()
+          .then( lead => {
+            console.log("Lead salva com sucesso")
+            res.render("index", { message: "Cadastro realizado com sucesso!", erro: false}) 
+          } )
+          .catch( err => console.log(`Ocorreu um erro ao criar lead: ${err}`))
 
-// });
+      }else{
+        
+        res.render("index", { message: "Email já cadastrado na nossa base.", erro: true}) 
+      }
+    })
+ 
+});
 
 
 router.post("/admin", passport.authenticate("local", {
@@ -84,29 +96,7 @@ router.get('/test', (req, res, next) => {
 
 });
 
-router.post('/send/form', ensureAuthenticated, (req, res, next) => {
-  const user = req.user;
-  const username = req.user.username;
-  const { name,  email } = req.body;
-  Lead.findOne({email})
-    .then(lead => {
-      if(lead == null){
-        const newLead = new Lead({
-          name,
-          email,
-        }); 
-        newLead.save()
-          .then( lead => {
-            console.log("Lead salva com sucesso")
-          } )
-          .catch( err => console.log(`Ocorreu um erro ao criar lead: ${err}`))
 
-      }else{
-        res.render("index", { message: "Email já cadastrado na nossa base."}) 
-      }
-    })
- 
-});
 
 const translateLeads = (leads) => {
   let finalLeads = { 

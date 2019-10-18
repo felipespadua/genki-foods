@@ -76,7 +76,7 @@ let user = {
   password: hashPass
 }
 mongoose
-.connect(process.env.MONGODB_URILOCAL, {useNewUrlParser: true})
+.connect(process.env.MONGODB_URI, {useNewUrlParser: true})
 .then(x => {
   Lead.collection.drop();
   let createLeads = leads.map(lead => {
