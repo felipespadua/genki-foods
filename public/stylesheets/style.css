@@ -47,7 +47,7 @@ a {
 
 #carouselExampleIndicators {
   position: relative;
-  width: 100vw;
+  /* width: 100vw; */
   height: 400px;
   
 }
@@ -199,6 +199,7 @@ a {
 
 .card img {
   border-radius: 1;
+  z-index: 1000;
 }
 
 /* CALL TO ACTION */
@@ -273,7 +274,43 @@ footer figure {
   /* font-size: 1rem; */
   text-align: left;
 }
-@media (max-width: 2000px){
+
+.arrow-h {
+  width: 100px;
+  margin-top: 60px;
+  animation: setah 1s;
+  display: none;
+}
+
+.arrow-h2 {
+  width: 100px;
+  margin-top: 60px;
+  display: none;
+  animation: setah 1s ease-in;
+}
+
+
+.arrow-v {
+  position: absolute;
+  height: 100px;
+  width: 100px;
+  top: 85%;
+  left: 85%;
+  animation: setav 1s ease-in;
+}
+
+@keyframes setah {
+  0%   {transform: translateX(-150px)}
+  100% {transform: translateX(0); display: block;}
+}
+
+@keyframes setav {
+  0%   {transform: translateY(150px);}
+  100% {transform: translateX(0); }
+}
+
+
+@media (max-width: 2200px){
   .container-form h2{
     font-size: 2.5rem;
 
@@ -301,6 +338,13 @@ footer figure {
   .carousel-inner p {
 
     font-size: 2rem;
+
+  }
+  .h2, h2 {
+    font-size: 1.5rem;
+  }
+  .arrow-v {
+    left: 75%;
 
   }
 }
@@ -365,7 +409,10 @@ footer figure {
   }
   .text-depoiment {
     font-size: 1.5rem;
-}
+  }
+  .products-cards img {
+    size: 10px;
+  }
 }
   
 
@@ -375,8 +422,9 @@ footer figure {
     font-size: 3rem;
   }
   .carousel-inner p {
-
-    font-size: 2rem;
+    margin-top: 30px;
+    width: 60%;
+    font-size: 1.5rem;
 
   }
   .input-control {
@@ -388,4 +436,15 @@ footer figure {
     height: 4rem;
     font-size: 1.5rem;
   }
+  #carouselExampleIndicators {
+    position: relative;
+    height: 400px;
+    width: 150vw;
+
+    
+  }
+  .carousel-inner img {
+    height: 400px;
+  }
+
 }
